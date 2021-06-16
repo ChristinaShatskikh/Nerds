@@ -5,6 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Дизайн-студия «Нёрдс»</title>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<header class="main-header">
@@ -79,39 +81,41 @@
 			</ul>
 		</section>
 
-		<section class="about"> 
-			<h2 class="visually-hidden">О нас</h2>
-			<b>Мы — маленькая, но гордая дизайн-студия из Краснодара.</b>
-			<p class="about-description">Исповедуем принципы минимализма и чистоты. Ставим математический расчет превыше креатива. Работаем не покладая рук, как роботы.</p>
-			<p class="about-list-title">Выполняем заказы на разработку:</p>
-			<ul class="about-list">
-				<li class="about-item">Веб-сайтов любой сложности</li>
-				<li class="about-item">Мобильных приложений для iOS и Android</li>
-				<li class="about-item">Слайдшоу и видео для корпоративных презентаций</li>
-			</ul>
-		</section>
+		<div class="index-columns">
+			<section class="about"> 
+				<h2 class="visually-hidden">О нас</h2>
+				<b>Мы — маленькая, но гордая дизайн-студия из Краснодара.</b>
+				<p class="about-description">Исповедуем принципы минимализма и чистоты. Ставим математический расчет превыше креатива. Работаем не покладая рук, как роботы.</p>
+				<p class="about-list-title">Выполняем заказы на разработку:</p>
+				<ul class="about-list">
+					<li class="about-item">Веб-сайтов любой сложности</li>
+					<li class="about-item">Мобильных приложений для iOS и Android</li>
+					<li class="about-item">Слайдшоу и видео для корпоративных презентаций</li>
+				</ul>
+			</section>
 
-		<section class="company-statistics">
-			<h2 class="visually-hidden">Статистика деятельности дизайн-студии «Нёрдс»</h2>
-			<p>
-				<img src="img/main-logo.png" width="360" height="208" alt="Логотип дизайн-студии «Нёрдс»">
-			</p>
-			<b>с 2004 года Любим точность во всем:</b>
-			<dl class="indicators-list">
-				<div class="indicator-item">
-					<dt>Уровень самоотдачи</dt>
-					<dd>146<sup>%</sup></dd>
-				</div>
-				<div class="indicator-item">
-					<dt>Соблюдение сроков</dt>
-					<dd>100<sup>%</sup></dd>
-				</div>
-				<div class="indicator-item">
-					<dt>Минимальная предоплата</dt>
-					<dd>50<sup>%</sup></dd>
-				</div>
-			</dl>
-		</section>
+			<section class="company-statistics">
+				<h2 class="visually-hidden">Статистика деятельности дизайн-студии «Нёрдс»</h2>
+				<p>
+					<img src="img/main-logo.png" width="360" height="208" alt="Логотип дизайн-студии «Нёрдс»">
+				</p>
+				<b>с 2004 года Любим точность во всем:</b>
+				<dl class="indicators-list">
+					<div class="indicator-item">
+						<dt>Уровень самоотдачи</dt>
+						<dd>146<sup>%</sup></dd>
+					</div>
+					<div class="indicator-item">
+						<dt>Соблюдение сроков</dt>
+						<dd>100<sup>%</sup></dd>
+					</div>
+					<div class="indicator-item">
+						<dt>Минимальная предоплата</dt>
+						<dd>50<sup>%</sup></dd>
+					</div>
+				</dl>
+			</section>
+		</div>
 
 		<section class="companies">
 			<h2 class="visually-hidden">Партнёры</h2>
@@ -174,19 +178,19 @@
 
 		<form class="form-feedback" action="https://echo.htmlacademy.ru" method="POST">
 			<div class="content-wrapper">
-				<label class="feedback-user-label">
+				<label>
 					Ваше имя:
-					<input class="feedback-user-input" type="text" placeholder="Имя Фамилия" required>
+					<input type="text" placeholder="Имя Фамилия" required>
 				</label>
 
-				<label class="feedback-email-label">
+				<label>
 					Ваш e-mail:
-					<input class="feedback-email-input" type="email" name="email" placeholder="email@example.com" required>
+					<input type="email" name="email" placeholder="email@example.com" required>
 				</label>
 
-				<label class="feedback-text-label">
+				<label>
 					Текст письма:
-					<textarea class="feedback-text-input" name="feedback-text" placeholder="В свободной форме"></textarea>
+					<textarea name="feedback-text" placeholder="В свободной форме"></textarea>
 				</label>
 			</div>
 
