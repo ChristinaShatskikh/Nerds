@@ -1,4 +1,6 @@
 body {
+    min-width: 1200px;
+    min-height: 100%;
     margin: 0;
     padding: 0;
 
@@ -15,6 +17,23 @@ a {
     text-decoration: none;
 }
 
+.content-wrapper {
+    width: 1160px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-header {
+    width: 100%;
+
+    background-color: #eeeeee;
+}
+
+.main-header-logo {
+    width: 160px;
+    height: 70px;
+}
+
 .main-header-logo:hover,
 .main-header-logo:focus {
     opacity: 0.8;
@@ -25,12 +44,14 @@ a {
 }
 
 .main-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
     line-height: 30px;
     font-weight: 500;
     color: #000000;
     text-transform: uppercase;
-
-    background-color: #eeeeee;
 }
 
 .site-navigation,
@@ -56,12 +77,38 @@ a {
     opacity: 0.3;
 }
 
+.site-navigation {
+    width: 500px;
+    margin: 0;
+    padding: 0;
+}
+
+.user-navigation {
+    width: 125px;
+    margin: 0;
+    padding: 0;
+}
+
 .slider {
+    width: 100%;
+    margin-bottom: 80px;
+
     background-color: #eeeeee;
 }
 
 .slider-list {
+    margin: 0;
+    padding: 0;
+
     list-style: none;
+}
+
+.slider-list-item {
+    display: flex;
+}
+
+.slide-content {
+    width: 382px;
 }
 
 .slide-title {
@@ -122,8 +169,22 @@ a {
     background-color: #e5a722;
 }
 
+.services {
+    margin-bottom: 35px;
+}
+
 .services-list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    padding-right: 60px;
+
     list-style: none;
+}
+
+.service-item {
+    width: 300px;
 }
 
 .service-item h3 {
@@ -132,6 +193,16 @@ a {
     font-weight: 700;
     color: #000000;
     text-transform: uppercase;
+}
+
+.index-columns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 65px;
+}
+
+.about {
+    width: 660px;
 }
 
 .about b {
@@ -148,6 +219,10 @@ a {
 
 .about-item {
     list-style-type: none;
+}
+
+.company-statistics {
+    width: 370px;
 }
 
 .company-statistics b {
@@ -171,8 +246,21 @@ a {
     line-height: 18px;
 }
 
+.companies {
+    margin-bottom: 80px;
+}
+
 .companies-list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+
     list-style: none;
+}
+
+.company-item {
+    width: 260px;
 }
 
 .company-link {
@@ -186,6 +274,26 @@ a {
 
 .company-link:active {
     opacity: 0.1;
+}
+
+.map {
+    height: 416px;
+    margin: 0 auto;
+}
+
+.map img {
+    display: block;
+    width: 100%;
+    height: 416px;
+    object-fit: cover;
+}
+
+.contacts {
+    width: 318px;
+    min-height: 310px;
+
+    padding: 48px;
+    padding-left: 50px;
 }
 
 .contacts-title {
@@ -205,17 +313,38 @@ a {
     color: #666666;
 }
 
+.footer-social {
+    display: flex;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
 .social-links {
+    width: 260px;
+    margin-right: 135px;
+
     text-align: center;
 }
 
 .social-list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
     list-style: none;
+}
+
+.social-list li {
+    width: 80px;
 }
 
 .social-button {
     color: #ffffff;
     background-color: #e1e1e1;
+}
+
+.social-offer {
+    width: 580px;
 }
 
 .social-offer b{
@@ -290,14 +419,35 @@ a {
 
 /* Стили для страницы каталога */
 
+.page-title-wrapper {
+    width: 100%;
+    margin-bottom: 55px;
+
+    background-color: #eeeeee;
+}
+
 .page-title {
+    margin: 0;
+    padding-top: 70px;
+    padding-bottom: 110px;
+    margin: 0 auto;
+
     font-size: 55px;
     line-height: 55px;
     font-weight: 500;
     color: #000000;
 
     text-align: center;
-    background-color: #eeeeee;
+}
+
+.catalog-columns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.filters {
+    width: 260px;
 }
 
 .filters fieldset {
@@ -360,7 +510,21 @@ a {
     background-color: #d5d5d5;
 }
 
+.catalog {
+    width: 760px;
+}
+
+.catalog-header {
+    display: flex;
+    margin-bottom: 50px;
+}
+
 .catalog-title {
+    margin: 0;
+    padding: 0;
+    width: 160px;
+    margin-right: 240px;
+
     font-size: 18px;
     line-height: 18px;
     font-weight: 700;
@@ -371,6 +535,19 @@ a {
 .sort-direction-list {
     list-style: none;
     line-height: 20px;
+}
+
+.sort-type-list {
+    margin: 0;
+    padding: 0;
+    width: 280px;
+}
+
+.sort-direction-list {
+    margin: 0;
+    padding: 0;
+    width: 60px;
+    margin-left: auto;
 }
 
 .sort-type-link,
@@ -396,7 +573,20 @@ a {
 }
 
 .catalog-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    margin: 0;
+    padding: 0;
+    margin-bottom: 30px;
+
     list-style: none;
+}
+
+.catalog-item {
+    width: 360px;
+    margin-bottom: 30px;
 }
 
 .catalog-item-description h3 {
@@ -422,6 +612,9 @@ a {
 }
 
 .pagination-list {
+    margin: 0;
+    padding: 0;
+
     list-style: none;
 }
 
@@ -445,3 +638,5 @@ a {
     background-color: transparent;
     border: 3px solid #dbdbdb;
 }
+
+
