@@ -121,8 +121,8 @@ input[type="radio"].visually-hidden {
     position: absolute;
     right: 20px;
     bottom: 15px;
+    left: 20px;
 
-    width: 74px;
     height: 2px;
 
     background-color: #fb565a;
@@ -218,7 +218,6 @@ input[type="radio"].visually-hidden {
     position: absolute;
     left: 50%;
     bottom: 95px;
-    z-index: 100;
 
     display: flex;
     justify-content: space-between;
@@ -263,7 +262,7 @@ input[type="radio"].visually-hidden {
 
 .button {
     display: block;
-    padding: 15px 0;
+    padding: 16px 0;
 
     font: inherit;
     
@@ -675,20 +674,75 @@ input[type="radio"].visually-hidden {
     line-height: 22px;
 }
 
+.modal {
+    position: fixed;
+
+    background-color: #ffffff;
+    z-index: 200;
+}
+
+.modal-form {
+    display: none;
+
+    width: 760px;
+
+    padding: 70px 100px 90px;
+
+    bottom: 180px;
+    left: 50%;
+
+    transform: translateX(-50%);
+    box-shadow: 0 20px 40px rgba(0, 1, 1, 0.75);
+}
+
 .modal-form h2 {
+    margin: 0;
+    margin-bottom: 40px;
+
     font-size: 45px;
     line-height: 45px;
     font-weight: 500;
     color: #000000;
 }
 
+.form-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+}
+
+.form-wrapper label {
+    width: 360px;
+
+    display: flex;
+    flex-direction: column;
+
+    line-height: 18px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.form-wrapper label:last-child {
+    width: 100%;
+}
+
 .form-feedback input,
 .form-feedback textarea {
+    margin-top: 10px;
+    margin-bottom: 35px;
+    padding: 15px;
+
     font: inherit;
     
+    line-height: 18px;
+    font-weight: 500;
     color: rgba(68, 68, 68, 0.5);
+
     background-color: transparent;
     border: 2px solid #d7dcde;
+    border-radius: 3px;
 }
 
 .form-feedback input::placeholder,
@@ -705,6 +759,7 @@ input[type="radio"].visually-hidden {
 .form-feedback textarea:focus {
     color: #444444;
     border-color: #000000;
+    outline: none;
 }
 
 .form-feedback input:focus::placeholder,
@@ -712,21 +767,62 @@ input[type="radio"].visually-hidden {
     color: #444444;
 }
 
-.form-feedback input:invalid,
-.form-feedback textarea:invalid {
+.form-feedback input:focus:invalid,
+.form-feedback textarea:focus:invalid,
+.form-feedback input:not(:placeholder-shown):not(:focus):invalid,
+.form-feedback textarea:not(:placeholder-shown):not(:focus):invalid {
     border-color: #e74246;
     color: #e74246;
 }
 
-.form-feedback input:invalid::placeholder,
-.form-feedback textarea:invalid::placeholder {
-    color: #e74246;
+.modal-close {
+    position: absolute;
+    right: 90px;
+    top: 75px;
+    width: 27px;
+    height: 27px;
+
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+    opacity: 0.3;
+    transition: opacity 0.3s ease-in-out;
 }
 
-.form-feedback label {
-    line-height: 18px;
-    font-weight: bold;
-    color: #000000;
+.modal-close:hover,
+.modal-close:focus {
+    opacity: 1;
+}
+
+.modal-close:active {
+    opacity: 0.1;
+}
+
+.modal-close::before,
+.modal-close::after {
+    content: "";
+
+    position: absolute;
+    top: 11px;
+    left: 0;
+
+    width: 27px;
+    height: 5px;
+
+    background-color: #fb565a
+}
+
+.modal-close::before {
+    transform: rotate(45deg);
+}
+
+.modal-close::after {
+    transform: rotate(-45deg);
+}
+
+.feedback-button {
+    width: 260px;
 }
 
 /* Стили для страницы каталога */
@@ -894,17 +990,6 @@ input[type="radio"].visually-hidden {
     user-select: none;
 }
 
-.filter-input:hover + label,
-.filter-input:focus + label {
-    color: #000000;
-}
-
-.filter-input:disabled + label {
-    color: #283136;
-
-    opacity: 0.3;
-}
-
 .filter-input-checkbox + label::before {
     content: "";
 
@@ -918,6 +1003,7 @@ input[type="radio"].visually-hidden {
     background-image: url("img/checkbox-off.svg");
     background-repeat: no-repeat;
     background-position: 0 0;
+    opacity: 0.4;
 }
 
 .filter-input-checkbox:checked + label::after {
@@ -933,6 +1019,7 @@ input[type="radio"].visually-hidden {
     background-image: url("img/checkbox-on.svg");
     background-repeat: no-repeat;
     background-position: 0 0;
+    opacity: 0.4;
 }
 
 .filter-input-radio + label::before {
@@ -948,6 +1035,7 @@ input[type="radio"].visually-hidden {
     background-image: url("img/radio-off.svg");
     background-repeat: no-repeat;
     background-position: 0 0;
+    opacity: 0.4;
 }
 
 .filter-input-radio:checked + label::after {
@@ -963,6 +1051,23 @@ input[type="radio"].visually-hidden {
     background-image: url("img/radio-on.svg");
     background-repeat: no-repeat;
     background-position: 0 0;
+    opacity: 0.4;
+}
+
+.filter-input:hover + label,
+.filter-input:focus + label {
+    color: #000000;
+}
+
+.filter-input:hover + label::before,
+.filter-input:hover + label::after {
+    opacity: 1;
+}
+
+.filter-input:disabled + label, 
+.filter-input:disabled + label::before,
+.filter-input:disabled + label::after {
+    opacity: 0.3;
 }
 
 .filter-button {
