@@ -33,7 +33,7 @@
 		<div class="slider">
 			<div class="content-wrapper">
 				<ul class="slider-list">
-					<li class="slider-list-item current-slide">
+					<li class="slider-list-item slide-current">
 						<div class="slide-content">
 							<p class="slide-title">Долго, дорого, скрупулезно.</p>
 							<p class="slide-description">Математически выверенный дизайн <br> для вашего сайта или мобильного приложения.</p>
@@ -58,7 +58,7 @@
 			</div>
 		
 			<div class="slider-controls">
-				<button class="slider-controls-button slider-controls-button-current" aria-label="1"></button>
+				<button class="slider-controls-button button-current" aria-label="1"></button>
 				<button class="slider-controls-button" aria-label="2"></button>
 				<button class="slider-controls-button" aria-label="3"></button>
 			</div>
@@ -155,6 +155,7 @@
 		<div class="map-contacts">
 			<section class="map">
 				<h2 class="visually-hidden">Как нас найти?</h2>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.603625300338!2d30.32085871645168!3d59.93871916905372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1626813411089!5m2!1sru!2sru" width="100%" height="416" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 				<img src="img/bg-map.png" width="1440" height="416" alt="191186, г. Санкт-Петербург, ул. Большая Конюшенная, д. 19/8">
 			</section>
 			<div class="content-wrapper">
@@ -199,7 +200,7 @@
 			<div class="form-wrapper">
 				<label>
 					Ваше имя:
-					<input type="text" placeholder="Имя Фамилия" required>
+					<input type="text" name="first-name" placeholder="Имя Фамилия" required>
 				</label>
 	
 				<label>
@@ -220,5 +221,7 @@
 	
 	</section>
 
+	<script src="js/modal-form.js"></script>
+	<script src="js/slider.js"></script>
 </body>
 </html>
